@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+:root {
+  --header-color: rgb(29 27 27);
+  --header-text: rgb(241, 234, 234);
+
+  --text-color: rgb(247, 247, 247);
+}
+
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+a {
+  cursor: pointer;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+p {
+  font-size: 18px;
+  line-height: calc(18px * 1.5);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  height: 2px;
+  width: 0%;
+  background-color: var(--text-color);
+  left: 50%;
+  transform: translateX(0);
+  transition: width 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+a:hover::after {
+  width: 100%;
+  transform: translateX(-50%);
+}
+
+.text-block {
+  height: 18px;
+  margin-bottom: 2rem;
+  background-color: var(--text-color);
+  width: 90%;
+  border-radius: 8px;
+  min-width: 36px;
+}
+
+.text-block:nth-child(1n) {
+  width: 86%;
+}
+.text-block:nth-child(2n) {
+  width: 93%;
+}
+.text-block:nth-child(3n) {
+  width: 75%;
+}
+.text-block:nth-child(4n) {
+  width: 95%;
+}
+.text-block:nth-child(5n) {
+  width: 90%;
+}
+
+a .text-block {
+  margin-bottom: 0;
+}
