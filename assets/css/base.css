@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 :root {
   --header-color: rgb(29 27 27);
   --header-text: rgb(241, 234, 234);
@@ -78,4 +78,19 @@ a:hover::after {
 
 a .text-block {
   margin-bottom: 0;
+}
+
+code {
+  background-color: #0f0f0f;
+  padding: 1.25rem;
+  color: #1cc20d;
+  display: inline-block;
+  border-radius: 8px;
+  font-family: 'Titillium Web', sans-serif;
+  height: fit-content;
+}
+
+code p {
+  font-size: 22xp;
+  line-height: calc(22px * 1.55);
 }

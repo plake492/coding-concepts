@@ -1,0 +1,47 @@
+main {
+  background: rgb(64, 15, 97);
+  background: linear-gradient(
+    164deg,
+    rgba(64, 15, 97, 1) 27%,
+    rgba(142, 88, 12, 1) 100%
+  );
+  min-height: 100vh;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3rem;
+}
+
+@media (max-width: 800px) {
+  main {
+    display: block;
+  }
+  code {
+    margin-top: 3rem;
+  }
+}
+
+main h1 {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+#orange {
+  color: rgb(213, 105, 28);
+}
+
+h1 {
+  color: rgb(237, 47, 47);
+}
+
+.blue {
+  color: rgb(28, 93, 213);
+}
+
+#purple {
+  color: rgb(151, 28, 213);
+}
+
+.pink {
+  color: rgb(213, 28, 145);
+}
