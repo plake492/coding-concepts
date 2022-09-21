@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+$a-length: 5s;
+$a-delay: 0.3s;
+
+$color-1: #8000ff;
+$color-2: #69e80f;
+// $color-2: #e86d0f;
+
+@mixin animation($name) {
+  animation: $name ($a-length + $a-delay) ease-in-out 0.3s 1;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(24, 23, 23);
+  @include animation(color-in);
+  z-index: 2;
+}
+
+.line {
+  position: relative;
+  padding: 2rem 3rem;
+  font-size: 48px;
+  line-height: 56px;
+
+  font-family: 'Prompt', sans-serif;
+  font-family: 'Quantico', sans-serif;
+  // font-family: 'VT323', monospace;
+}
+
+.line::before,
+.line::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 8px;
+}
+
+.line::before {
+  top: 7.5px;
+  left: 7.5px;
+  right: -7.5px;
+  bottom: -7.5px;
+  border-color: $color-1;
+  // box-shadow: 2.5px 2.5px 10px 2px rgba($color-1, 0.5),
+  //   inset 2.5px 2.5px 10px 2px rgba($color-1, 0.5);
+
+  animation: in-purple 5s steps(15, jump-both) 0s infinite forwards;
+}
+
+.line::after {
+  top: -7.5px;
+  left: -7.5px;
+  right: 7.5px;
+  bottom: 7.5px;
+  border-color: $color-2;
+  // box-shadow: -2.5px -2.5px 10px 2px rgba($color-2, 0.5),
+  //   inset -2.5px -2.5px 10px 2px rgba($color-2, 0.5);
+  animation: in-2 5s steps(15, jump-both) $a-delay 1 forwards;
+}
+
+.line {
+  position: relative;
+}
+
+// .white-l,
+// .white-r {
+//   position: absolute;
+//   width: 0;
+//   top: 0;
+//   height: 100vh;
+//   background-color: rgb(225, 215, 215);
+//   animation: white-in 3s ease-in-out 10s 1 forwards;
+//   z-index: 100;
+// }
+
+// .white-l {
+//   left: 0;
+// }
+
+// .white-r {
+//   right: 0;
+// }
+
+@keyframes white-in {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100vw;
+  }
+}
+
+p {
+  --text-color: rgb(238, 230, 230);
+}
+
+.glitch {
+  position: relative;
+  color: #fff;
+  font-size: 80px;
+}
+
+.line {
+  &:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation: clip 3000ms $i * -300ms linear infinite,
+        glitch#{$i} 500ms random(1000) * -1ms linear infinite;
+
+      @keyframes glitch#{$i} {
+        0% {
+          transform: translateX(0);
+        }
+        80% {
+          transform: translateX(0);
+          color: #fff;
+        }
+        85% {
+          transform: translateX(random(10) - 5px);
+          color: #4e9a26;
+        }
+        90% {
+          transform: translateX(random(10) - 5px);
+          color: #ac1212;
+        }
+        95% {
+          transform: translateX(random(10) - 5px);
+          color: #fff;
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}
+
+@keyframes clip {
+  0% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 120%, 0 120%);
+  }
+
+  100% {
+    clip-path: polygon(0 -20%, 100% -20%, 100% 0%, 50%, 0);
+  }
+}
+
+@keyframes color-in {
+  from {
+    background-color: rgb(0, 0, 0);
+  }
+  to {
+    background-color: rgb(24, 23, 23);
+  }
+}
+
+@keyframes in-purple {
+  0% {
+    box-shadow: 2px 2px 5px $color-1, inset 2px 2px 5px $color-1;
+    opacity: 0;
+  }
+
+  5% {
+    box-shadow: 2px 2px 5px $color-1, inset 2px 2px 5px $color-1;
+    opacity: 1;
+  }
+
+  6% {
+    box-shadow: 2px 2px 5px $color-1, inset 2px 2px 5px $color-1;
+    opacity: 0;
+  }
+
+  7% {
+    box-shadow: 2px 2px 5px $color-1, inset 2px 2px 5px $color-1;
+    opacity: 1;
+  }
+
+  17% {
+    box-shadow: 2px 2px 5px $color-1, inset 2px 2px 5px $color-1;
+    opacity: 0;
+  }
+
+  25% {
+    box-shadow: 2px 2px 5px $color-1, inset 2px 2px 5px $color-1;
+    opacity: 1;
+  }
+
+  100% {
+    box-shadow: 2px 2px 5px $color-1, inset 2px 2px 5px $color-1;
+    opacity: 1;
+  }
+}
+
+@keyframes in-2 {
+  0% {
+    box-shadow: -2px -2px 5px $color-2, inset -2px -2px 5px $color-2;
+    opacity: 0;
+  }
+
+  5% {
+    box-shadow: -2px -2px 5px $color-2, inset -2px -2px 5px $color-2;
+    opacity: 0.2;
+  }
+
+  7% {
+    box-shadow: -2px -2px 5px $color-2, inset -2px -2px 5px $color-2;
+    opacity: 0;
+  }
+
+  10% {
+    box-shadow: -2px -2px 5px $color-2, inset -2px -2px 5px $color-2;
+    opacity: 0.4;
+  }
+
+  17% {
+    box-shadow: -2px -2px 5px $color-2, inset -2px -2px 5px $color-2;
+    opacity: 0;
+  }
+
+  25% {
+    box-shadow: -2px -2px 5px $color-2, inset -2px -2px 5px $color-2;
+    opacity: 0.2;
+  }
+  69% {
+    box-shadow: -2px -2px 5px $color-2, inset -2px -2px 5px $color-2;
+    opacity: 1;
+  }
+  71% {
+    transform: translate(-2px, 5px);
+    box-shadow: -2px -2px 5px $color-2, inset -2px -2px 5px $color-2;
+    opacity: 0.3;
+  }
+  72% {
+    transform: translate(1px, 2px);
+    box-shadow: -2px -2px 5px $color-2, inset -2px -2px 5px $color-2;
+    opacity: 0.3;
+  }
+  76% {
+    transform: translate(-1px, 1px);
+    box-shadow: -2px -2px 5px $color-2, inset -2px -2px 5px $color-2;
+    opacity: 0;
+  }
+  78% {
+    transform: translate(0, 0);
+    box-shadow: -2px -2px 5px $color-2, inset -2px -2px 5px $color-2;
+    opacity: 0.6;
+  }
+  100% {
+    box-shadow: -2px -2px 5px $color-2, inset -2px -2px 5px $color-2;
+    opacity: 0.2;
+  }
+}
+
+.blackout {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgb(10, 10, 10);
+
+  opacity: 0;
+
+  animation: blackout 2s ease-out 3s 1 forwards;
+  z-index: 10;
+}
+
+@keyframes blackout {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
