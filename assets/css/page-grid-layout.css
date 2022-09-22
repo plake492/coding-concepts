@@ -1,6 +1,5 @@
 /* Page Layouts */
 .page-grid-layout {
-  --page-border-width: 5px;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;

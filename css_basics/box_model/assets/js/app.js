@@ -1,13 +1,13 @@
 window.addEventListener('DOMContentLoaded', function () {
-  let isDead = false
+  let borderRemoved = false
   const btn = document.getElementById('class-btn')
   const allBoxes = [...document.querySelectorAll('.box')]
 
   btn.addEventListener('click', () => {
     allBoxes.forEach(el => {
-      el.classList[isDead ? 'remove' : 'add']('kill-border')
+      el.classList[borderRemoved ? 'remove' : 'add']('kill-border')
     })
-    isDead = !isDead
+    borderRemoved = !borderRemoved
   })
 })
 

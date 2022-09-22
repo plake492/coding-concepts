@@ -1,0 +1,130 @@
+body {
+  --text-color: #eee;
+  background: linear-gradient(
+    289deg,
+    hsl(233, 100%, 43%) 0%,
+    hsl(291, 100%, 54%) 100%
+  );
+  color: var(--text-color);
+}
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+#padding {
+  padding: 4rem;
+  padding-left: var(--padding);
+  position: relative;
+  transition: padding 300ms ease-in-out;
+  text-align: center;
+  border-radius: 8px;
+  z-index: 1;
+  overflow: hidden;
+
+  /* background: linear-gradient(
+    145deg,
+    hsl(233, 63%, 52%) 25%,
+    hsl(291, 100%, 54%) 100%
+  ); */
+}
+
+#margin {
+  margin: 4rem;
+  margin-left: var(--margin);
+  position: relative;
+  transition: margin 300ms ease-in-out;
+  text-align: center;
+  border-radius: 8px;
+  z-index: 1;
+
+  /* background: linear-gradient(
+    45deg,
+    hsl(233, 63%, 52%) 40%,
+    hsl(291, 96%, 62%) 100%
+  ); */
+}
+
+#padding::before,
+#margin::before {
+  background: #1a00ff;
+  content: '';
+  width: 100%;
+  height: 100%;
+  filter: blur(800px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 8px;
+}
+
+#padding::after,
+#margin::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  background-color: #eee;
+  top: 50%;
+}
+
+#margin::after {
+  right: 100%;
+  width: calc(var(--margin) + var(--bs-border-width));
+  transform: translate(0, -50%);
+  transition: width 300ms ease-in-out;
+}
+
+#padding::after {
+  left: 0;
+  width: calc(var(--padding) + var(--bs-border-width));
+  transform: translate(0, -50%);
+  transition: width 300ms ease-in-out;
+}
+
+.display-margin {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(
+    calc(((var(--margin) + var(--bs-border-width)) * -1)),
+    -100%
+  );
+  transition: transform 300ms ease-in-out;
+}
+.display-padding {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(0, -100%);
+  transition: transform 300ms ease-in-out;
+}
+
+#gradient-canvas {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  border-radius: 8px;
+  --gradient-color-1: #8010c1;
+  --gradient-color-2: #088fb8;
+  --gradient-color-3: #cf0689;
+  --gradient-color-4: #9900ff;
+}
+
+#gradient-canvas-2 {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  border-radius: 8px;
+  --gradient-color-1: #3700ff;
+  --gradient-color-2: #0877b8;
+  --gradient-color-3: #5a06cf;
+  --gradient-color-4: #ff00a2;
+}

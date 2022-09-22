@@ -121,3 +121,51 @@ code p {
   font-size: 22xp;
   line-height: calc(22px * 1.55);
 }
+
+input {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border: 3px #828181 solid;
+}
+
+/* input:focus-within {
+  border-color: rgb(0, 255, 204);
+} */
+
+.super-input {
+  --input-color: #dedede;
+  --border-color: var(--input-color);
+  background-color: var(--input-color);
+  color: #101010;
+
+  min-width: 125px;
+  padding: 1rem;
+  min-height: 55px;
+  font-size: 20px;
+  line-height: calc(20px * 1.5);
+  border: 4px solid var(--border-color);
+  border-radius: 16px;
+  transition: box-shadow 200ms ease-in-out, color 200ms ease-in-out,
+    border-color 200ms ease-in-out, transform 200ms ease-in-out;
+  box-shadow: -5px -5px 10px rgb(235, 237, 243, 0.2),
+    5px 5px 10px rgb(0, 0, 0, 0.25),
+    inset -2px -2px 10px rgb(235, 237, 243, 0.6),
+    inset 2px 2px 10px rgb(0, 0, 0, 0.25);
+}
+.super-input:hover {
+  --border-color: rgb(235, 237, 243, 0.3);
+  box-shadow: -8px -8px 10px rgb(235, 237, 243, 0.2),
+    8px 8px 10px rgb(0, 0, 0, 0.25),
+    inset -3px -3px 10px rgb(235, 237, 243, 0.6),
+    inset 3px 3px 10px rgb(0, 0, 0, 0.25);
+}
+
+.super-input:focus {
+  color: rgb(111, 12, 89);
+  box-shadow: -1px -1px 10px rgb(235, 237, 243, 0.2),
+    1px 1px 10px rgb(0, 0, 0, 0.25),
+    inset -2px -2px 10px rgb(235, 237, 243, 0.6),
+    inset 2px 2px 10px rgb(0, 0, 0, 0.25);
+}

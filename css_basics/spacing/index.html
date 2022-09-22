@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="bg-dark shadow-lg">
+      <div class="ps-5 ms-5 py-4">
+        <h1 class="mb-0">Margin and Padding</h1>
+      </div>
+    </header>
+    <main
+      id="space-target"
+      style="--margin: 56px; --padding: 56px"
+      class="vh-100 container d-flex flex-col align-items-center justify-content-center"
+    >
+      <div id="padding" class="border border-light shadow-lg">
+        <div class="display-padding">56px</div>
+        <div class="border-start">
+          <canvas id="gradient-canvas-2" data-transition-in></canvas>
+
+          <h4>Padding</h4>
+          <p>
+            Margin describes the space inside the box, it will elemnts inside
+            the box away from the edge of the box....
+          </p>
+          <div class="text-block"></div>
+          <div class="text-block"></div>
+          <div class="text-block"></div>
+          <input
+            class="super-input"
+            placeholder="Set padding"
+            type="number"
+            id="padding-input"
+          />
+        </div>
+      </div>
+      <div id="margin" class="border border-light shadow-lg">
+        <div class="display-margin">56px</div>
+        <canvas id="gradient-canvas" data-transition-in></canvas>
+
+        <h4>Margin</h4>
+        <p>
+          Margin describes the space around the box, it will push the box away
+          from other elements....
+        </p>
+        <div class="text-block"></div>
+        <div class="text-block"></div>
+        <div class="text-block"></div>
+        <input
+          class="super-input"
+          placeholder="Set margin"
+          type="number"
+          id="margin-input"
+        />
+      </div>
+    </main>
+    <script src="../../assets/js/gradient.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
